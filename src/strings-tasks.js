@@ -374,8 +374,17 @@ function isPalindrome(str) {
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
  */
-function findLongestWord(/* sentence */) {
-  throw new Error('Not implemented');
+function findLongestWord(sentence) {
+  const arr = sentence.split(' ');
+  let word = arr[0];
+
+  for (let i = 1; i < arr.length; i += 1) {
+    if (word.length < arr[i].length) {
+      word = arr[i];
+    }
+  }
+
+  return word;
 }
 
 /**
